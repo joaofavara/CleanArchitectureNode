@@ -1,9 +1,12 @@
+const product = require('../product/index');
+
 module.exports = function makeSaveProduct(dbSaveProduct) {
     return async function saveProduct(payload) {
         try {
-            await dbSaveProduct(payload);
+            const result = await dbSaveProduct(payload);
+            return product.makeProduct(result);
         } catch (error) {
-            console.log(error);
+            next(error);
         }
     }
 }
