@@ -1,15 +1,16 @@
-module.exports = function makeSaveProduct(model) {
+module.exports = function makeSaveProduct(model, validation) {
     return async function saveProduct(payload) {
         try {
-            await model.create({
-                type: payload.type,
+            validation({ ...payload });
+            return await model.create({
+                type: 'product',
                 name: payload.name,
                 cost: payload.cost,
                 quantity: payload.quantity,
                 description: payload.description,
             })
         } catch (error) {
-            console.log(error)
+            next(error);
         }
     }
 }

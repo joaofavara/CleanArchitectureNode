@@ -1,7 +1,8 @@
-const productModel = require('../../product/product.model');
+const productModel = require('./model');
+const { makeProduct } = require('../../product/index')
 const makeSaveProduct = require('./saveProduct');
 
-const saveProduct = makeSaveProduct(productModel);
+const saveProduct = makeSaveProduct(productModel, makeProduct);
 
 module.exports = {
     saveProduct
