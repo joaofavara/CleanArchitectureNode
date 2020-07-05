@@ -1,12 +1,7 @@
 // add the module to validate
 module.exports = (productValidator) => {
-    return ({
-      name,
-      cost,
-      quantity,
-      description, 
-    } = {}) => {
-
+    return (payload) => {
+      const {name, cost, quantity, description} = payload;
       productValidator({name, cost, quantity, description});
 
       return {
