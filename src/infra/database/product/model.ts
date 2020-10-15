@@ -3,4 +3,4 @@ const productSchemas = require('./schema');
 
 const productModel = mongoose.model('Product', productSchemas);
 
-module.exports = productModel;
+export default productModel;

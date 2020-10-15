@@ -1,15 +1,17 @@
-const { saveProduct } = require('../infra/database/product');
+import { saveProduct as save} from '../infra/database/product';
 
 // const getAllProducts = require('./getAllProducts');
 // const getOneProduct = require('./getOneProduct');
-const makeSaveProduct = require('./makeSaveProduct');
+import makeSaveProduct from './makeSaveProduct';
 // const updateProduct = require('./updateProduct');
 // const deleteProduct = require('./deleteProduct');
 
-module.exports = {
+const saveProduct = makeSaveProduct(save);
+
+export {
     // getAllProducts,
     //getOneProduct,
-    saveProduct: makeSaveProduct(saveProduct),
+    saveProduct,
     // updateProduct,
     // deleteProduct,
 }

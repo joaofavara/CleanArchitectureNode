@@ -1,5 +1,5 @@
-const Joi = require('joi'); 
+import * as Joi from 'joi'; 
 
-module.exports = (schema) => {
+export default (schema) => {
     return ({name, cost, quantity, description}) => Joi.validate({ name, cost, quantity, description }, schema);
 }

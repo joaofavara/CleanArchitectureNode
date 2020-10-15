@@ -1,6 +1,6 @@
-const { productValidator } = require('../domain/product')
+import productValidator from '../domain/product';
 
-module.exports = (dbSaveProduct) =>  {
+export default (dbSaveProduct) =>  {
     return async (payload) => {
         const validate = productValidator(payload);
         if (validate.error !== null) {

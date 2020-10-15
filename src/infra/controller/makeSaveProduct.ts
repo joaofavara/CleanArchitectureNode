@@ -1,7 +1,7 @@
-const { saveProduct } = require('../../useCase/index');
+import { NextFunction, Request, Response } from "express";
 
-module.exports = () => {
-    return async (req, res, next) => {
+export default (saveProduct) => {
+    return async (req: Request, res: Response, next: NextFunction) => {
         try {
             const body = req.body;
             const result = await saveProduct(body);
