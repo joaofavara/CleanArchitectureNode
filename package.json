@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/http/index.js",
+    "dev": "nodemon --inspect src/infra/http/index.js",
+    "db": "node databaseScript/script.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel --presets es2015 -d lib/ src"
   },

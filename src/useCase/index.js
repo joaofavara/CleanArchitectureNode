@@ -1,17 +1,15 @@
-const database = require('../database/product/index');
+const { saveProduct } = require('../infra/database/product');
 
 // const getAllProducts = require('./getAllProducts');
 // const getOneProduct = require('./getOneProduct');
-const makeSaveProduct = require('./saveProduct');
+const makeSaveProduct = require('./makeSaveProduct');
 // const updateProduct = require('./updateProduct');
 // const deleteProduct = require('./deleteProduct');
-
-const saveProduct = makeSaveProduct(database.saveProduct);
 
 module.exports = {
     // getAllProducts,
     //getOneProduct,
-    saveProduct,
+    saveProduct: makeSaveProduct(saveProduct),
     // updateProduct,
     // deleteProduct,
 }
