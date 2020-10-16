@@ -1,4 +1,4 @@
-import productValidator from '../domain/product';
+import productValidator from '../../domain/product';
 
 export default (dbSaveProduct) =>  {
     return async (payload) => {

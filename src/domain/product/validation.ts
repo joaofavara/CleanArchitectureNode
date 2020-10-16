@@ -1,5 +1,5 @@
-import * as Joi from 'joi'; 
+import { validate } from 'joi'; 
 
 export default (schema) => {
-    return ({name, cost, quantity, description}) => Joi.validate({ name, cost, quantity, description }, schema);
+    return ({name, cost, quantity, description}) => validate({ name, cost, quantity, description }, schema);
 }
