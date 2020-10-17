@@ -1,19 +1,27 @@
-import { getAll, save } from '../infra/repository';
+import {
+    getAll,
+    save,
+    getOne,
+    update,
+    remove,
+} from '../infra/repository';
 
-import makeGetAllProducts from './get/makeGetAllProducts';
 import makeSaveProduct from './post/makeSaveProduct';
-// const getAllProducts = require('./getAllProducts');
-// const getOneProduct = require('./getOneProduct');
-// const updateProduct = require('./updateProduct');
-// const deleteProduct = require('./deleteProduct');
+import makeGetAllProducts from './get/makeGetAllProducts';
+import makeGetOneProduct from './get/makeGetOneProduct';
+import makeUpdateProduct from './update/makeUpdateProduct';
+import makeRemoveProduct from './remove/makeRemoveProduct';
 
 const saveProduct = makeSaveProduct(save);
 const getAllProducts = makeGetAllProducts(getAll);
+const getOneProduct = makeGetOneProduct(getOne);
+const updateProduct = makeUpdateProduct(update);
+const removeProduct = makeRemoveProduct(remove);
 
 export {
     getAllProducts,
     saveProduct,
-    //getOneProduct,
-    // updateProduct,
-    // deleteProduct,
+    getOneProduct,
+    updateProduct,
+    removeProduct,
 }
