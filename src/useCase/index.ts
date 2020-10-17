@@ -1,4 +1,4 @@
-import { getAllProducts as getProducts, saveProduct as save} from '../infra/database/product';
+import { getAll, save } from '../infra/repository';
 
 import makeGetAllProducts from './get/makeGetAllProducts';
 import makeSaveProduct from './post/makeSaveProduct';
@@ -8,7 +8,7 @@ import makeSaveProduct from './post/makeSaveProduct';
 // const deleteProduct = require('./deleteProduct');
 
 const saveProduct = makeSaveProduct(save);
-const getAllProducts = makeGetAllProducts(getProducts);
+const getAllProducts = makeGetAllProducts(getAll);
 
 export {
     getAllProducts,
